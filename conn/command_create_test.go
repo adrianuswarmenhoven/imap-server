@@ -27,5 +27,10 @@ var _ = Describe("Create Command", func() {
 			SendLine(`abcd.123 CREATE "test"`)
 			ExpectResponse("abcd.123 OK CREATE Completed")
 		})
+
+		It("invalid name give an error", func() {
+			SendLine(`abcd.123 CREATE "invalid"`)
+			ExpectResponse("abcd.123 NO create failure: can't create mailbox with that name")
+		})
 	})
 })
