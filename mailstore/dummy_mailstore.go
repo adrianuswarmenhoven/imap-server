@@ -96,6 +96,16 @@ func (u *DummyUser) MailboxByName(name string) (Mailbox, error) {
 	return nil, errors.New("Invalid mailbox")
 }
 
+func (u *DummyUser) RenameMailbox(fromName string, toName string) error {
+	for _, mailbox := range u.mailboxes {
+		if mailbox.Name() == fromName {
+			mailbox.name = toName
+			return nil
+		}
+	}
+	return errors.New("Invalid mailbox")
+}
+
 // DummyMailbox is an in-memory implementation of a Mailstore Mailbox
 type DummyMailbox struct {
 	ID        uint32
@@ -112,11 +122,15 @@ func (m *DummyMailbox) DebugPrintMailbox() {
 }
 
 // Name returns the Mailbox's name
-func (m *DummyMailbox) Name() string { return m.name }
+func (m *DummyMailbox) Name() string {
+	return m.name
+}
 
 // NextUID returns the UID that is likely to be assigned to the next
 // new message in the Mailbox
-func (m *DummyMailbox) NextUID() uint32 { return m.nextuid }
+func (m *DummyMailbox) NextUID() uint32 {
+	return m.nextuid
+}
 
 // LastUID returns the UID of the last message in the mailbox or if the
 // mailbox is empty, the next expected UID
@@ -144,7 +158,9 @@ func (m *DummyMailbox) Recent() uint32 {
 }
 
 // Messages returns the total number of messages in the Mailbox
-func (m *DummyMailbox) Messages() uint32 { return uint32(len(m.messages)) }
+func (m *DummyMailbox) Messages() uint32 {
+	return uint32(len(m.messages))
+}
 
 // Unseen returns the number of messages in the mailbox which are currently
 // marked with the 'Unseen' flag
@@ -365,10 +381,14 @@ func (m *DummyMessage) Header() (hdr textproto.MIMEHeader) {
 }
 
 // UID returns the message's unique identifier (UID).
-func (m *DummyMessage) UID() uint32 { return m.uid }
+func (m *DummyMessage) UID() uint32 {
+	return m.uid
+}
 
 // SequenceNumber returns the message's sequence number.
-func (m *DummyMessage) SequenceNumber() uint32 { return m.sequenceNumber }
+func (m *DummyMessage) SequenceNumber() uint32 {
+	return m.sequenceNumber
+}
 
 // Size returns the message's full RFC822 size, including full message header
 // and body.
