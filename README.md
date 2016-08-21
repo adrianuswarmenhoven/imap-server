@@ -32,7 +32,7 @@ Supported Commands
 Command       | Planned  | Implemented  | Tests
 ------------- | -------  | -----------  | -----
 CAPABILITY    | ✓       | ✓           | ✓
-NOOP          | ✓       | ✗           | ✗
+NOOP          | ✓       | ✓           | ✓
 LOGOUT        | ✓       | ✓           | ✓
 AUTHENTICATE  | ✓       | ✓            | ✗
 LOGIN         | ✓       | ✓           | ✗
