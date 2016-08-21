@@ -109,6 +109,16 @@ func (u *DummyUser) CreateMailboxByName(name string) (Mailbox, error) {
 	return mailbox, nil
 }
 
+func (u *DummyUser) RenameMailbox(fromName string, toName string) error {
+	for _, mailbox := range u.mailboxes {
+		if mailbox.Name() == fromName {
+			mailbox.name = toName
+			return nil
+		}
+	}
+	return errors.New("Invalid mailbox")
+}
+
 // DummyMailbox is an in-memory implementation of a Mailstore Mailbox
 type DummyMailbox struct {
 	ID        uint32

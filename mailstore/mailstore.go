@@ -24,6 +24,8 @@ type User interface {
 	Cleanup() error
 
 	CreateMailboxByName(name string) (Mailbox, error)
+
+	RenameMailbox(fromName string, toName string) error
 }
 
 // Mailbox represents a mailbox belonging to a user in the mail storage system

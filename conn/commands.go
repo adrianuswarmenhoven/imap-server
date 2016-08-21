@@ -66,6 +66,7 @@ func init() {
 	registerCommand("(?i:CHECK)", cmdCheck)
 	registerCommand("(?i:CREATE) \"([A-z0-9]+)\"", cmdCreate)
 	registerCommand("(?i:SUBSCRIBE) \"([A-z0-9]+)\"", cmdSubscribe)
+	registerCommand("(?i:RENAME) \"([A-z0-9]+)\" \"([A-z0-9]+)\"", cmdRename)
 
 	// APPEND "INBOX" (\Seen) {310}
 	// APPEND "INBOX" (\Seen) "21-Jun-2015 01:00:25 +0900" {310}

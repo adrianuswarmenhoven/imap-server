@@ -40,7 +40,7 @@ STARTTLS      | ✓       | ✗           | ✗
 EXAMINE       | ✓       | ✓           | ✗
 CREATE        | ✓       | ✗            | ✗
 DELETE        | ✓       | ✗            | ✗
-RENAME        | ✓       | ✗            | ✗
+RENAME        | ✓       | ✓            | ✓
 SUBSCRIBE     | ✗       | -            | -
 UNSUBSCRIBE   | ✗       | -            | -
 LIST          | ✓       | ✓           | ✓
