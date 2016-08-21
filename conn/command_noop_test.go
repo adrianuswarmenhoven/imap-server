@@ -12,7 +12,9 @@ var _ = Describe("NOOP Command", func() {
 			tConn.User = mStore.User
 		})
 
-		PIt("should (implement test)", func() {
+		It("shoud send response", func() {
+			SendLine(`abcd.123 NOOP`)
+			ExpectResponse("abcd.123 OK NOOP Completed")
 		})
 	})
 
@@ -21,7 +23,9 @@ var _ = Describe("NOOP Command", func() {
 			tConn.SetState(conn.StateNotAuthenticated)
 		})
 
-		PIt("should give an error", func() {
+		It("shoud send response", func() {
+			SendLine(`abcd.123 NOOP`)
+			ExpectResponse("abcd.123 OK NOOP Completed")
 		})
 	})
 })
