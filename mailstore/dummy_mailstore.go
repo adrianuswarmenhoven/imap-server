@@ -86,6 +86,10 @@ func (u *DummyUser) Mailboxes() []Mailbox {
 	return mailboxes
 }
 
+func (u *DummyUser) Cleanup() error {
+	return nil
+}
+
 // MailboxByName returns a DummyMailbox object, given the mailbox's name
 func (u *DummyUser) MailboxByName(name string) (Mailbox, error) {
 	for _, mailbox := range u.mailboxes {
