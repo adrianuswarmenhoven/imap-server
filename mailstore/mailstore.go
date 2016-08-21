@@ -21,6 +21,8 @@ type User interface {
 
 	MailboxByName(name string) (Mailbox, error)
 
+	Cleanup() error
+
 	CreateMailboxByName(name string) (Mailbox, error)
 }
 
