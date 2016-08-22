@@ -23,12 +23,12 @@ var _ = Describe("RENAME Command", func() {
 			tConn.User = mStore.User
 		})
 
-		It("should work without errors", func() {
+		It("rename folder should work without errors", func() {
 			SendLine(`abcd.123 RENAME "INBOX" "new"`)
 			ExpectResponse("abcd.123 OK RENAME Completed")
 		})
 
-		It("invalid name give an error", func() {
+		It("rename folder with invalid name give an error", func() {
 			SendLine(`abcd.123 RENAME "invalid" "new"`)
 			ExpectResponse("abcd.123 NO RENAME Failure: can't rename mailbox with that name, can't rename to mailbox with that name")
 		})
