@@ -6,12 +6,17 @@ import (
 	"github.com/jordwest/imap-server/types"
 )
 
-func getDefaultInbox(t *testing.T) *DummyMailbox {
+func getDefaultUser(t *testing.T) *DummyUser {
 	m := NewDummyMailstore()
 	user, err := m.Authenticate("username", "password")
 	if err != nil {
 		t.Fatalf("Error getting user: %s\n", err)
 	}
+	return user.(*DummyUser)
+}
+
+func getDefaultInbox(t *testing.T) *DummyMailbox {
+	user := getDefaultUser(t)
 	mailbox, err := user.MailboxByName("INBOX")
 	if err != nil {
 		t.Fatalf("Error getting default mailbox: %s\n", err)
@@ -75,4 +80,18 @@ func TestMessageSetByUID(t *testing.T) {
 		types.SequenceRange{Min: "*", Max: ""},
 	})
 	assertMessageUIDs(t, msgs, []uint32{12})
+}
+
+func TestDeleteMailbox(t *testing.T) {
+	user := getDefaultUser(t)
+	if len(user.Mailboxes()) != 2 {
+		t.Fatalf("mailboxes length should be 0 but is %d", len(user.Mailboxes()))
+	}
+	err := user.DeleteMailboxByName("INBOX")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(user.Mailboxes()) != 1 {
+		t.Fatalf("mailboxes length should be 0 but is %d", len(user.Mailboxes()))
+	}
 }

@@ -20,6 +20,8 @@ type User interface {
 	Mailboxes() []Mailbox
 
 	MailboxByName(name string) (Mailbox, error)
+
+	DeleteMailboxByName(name string) (error)
 }
 
 // Mailbox represents a mailbox belonging to a user in the mail storage system
