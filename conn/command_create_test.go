@@ -23,14 +23,19 @@ var _ = Describe("Create Command", func() {
 			tConn.User = mStore.User
 		})
 
-		It("should work without errors", func() {
+		It("create folder should work without errors", func() {
 			SendLine(`abcd.123 CREATE "test"`)
 			ExpectResponse("abcd.123 OK CREATE Completed")
 		})
 
-		It("invalid name give an error", func() {
+		It("create folder with invalid name give an error", func() {
 			SendLine(`abcd.123 CREATE "invalid"`)
 			ExpectResponse("abcd.123 NO create failure: can't create mailbox with that name")
+		})
+
+		It("create subfolder should work without errors", func() {
+			SendLine(`abcd.123 CREATE "foo/bar"`)
+			ExpectResponse("abcd.123 OK CREATE Completed")
 		})
 	})
 })

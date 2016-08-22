@@ -63,7 +63,7 @@ func init() {
 	registerCommand("(?i:EXAMINE) \"?([A-z0-9]+)\"?", cmdExamine)
 	registerCommand("(?i:STATUS) \"?([A-z0-9/]+)\"? \\(([A-z\\s]+)\\)", cmdStatus)
 	registerCommand("((?i)UID )?(?i:FETCH) ("+sequenceSet+") \\(([A-z0-9\\s\\(\\)\\[\\]\\.-]+)\\)", cmdFetch)
-	registerCommand("(?i:CREATE) \"([A-z0-9]+)\"", cmdCreate)
+	registerCommand("(?i:CREATE) \"([A-z0-9/]+)\"", cmdCreate)
 	registerCommand("(?i:DELETE) \"([A-z0-9/]+)\"", cmdDelete)
 	registerCommand("(?i:RENAME) \"([A-z0-9/]+)\" \"([A-z0-9]+)\"", cmdRename)
 	registerCommand("(?i:SUBSCRIBE) \"([A-z0-9/]+)\"", cmdSubscribe)
