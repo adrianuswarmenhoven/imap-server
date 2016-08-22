@@ -67,7 +67,7 @@ func init() {
 	registerCommand("(?i:DELETE) \"([A-z0-9]+)\"", cmdDelete)
 	registerCommand("(?i:RENAME) \"([A-z0-9]+)\" \"([A-z0-9]+)\"", cmdRename)
 	registerCommand("(?i:SUBSCRIBE) \"([A-z0-9]+)\"", cmdSubscribe)
-	registerCommand("(?i:UNSUBSCRIBE) \"([A-z0-9]+)\"", cmdUnsubscribe)
+	registerCommand("(?i:UNSUBSCRIBE) \"([A-z0-9/]+)\"", cmdUnsubscribe)
 	registerCommand("(?i:CHECK)", cmdCheck)
 
 	// APPEND "INBOX" (\Seen) {310}
