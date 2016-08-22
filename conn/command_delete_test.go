@@ -23,12 +23,12 @@ var _ = Describe("DELETE Command", func() {
 			tConn.User = mStore.User
 		})
 
-		It("should work without errors", func() {
+		It("delete folder should work without errors", func() {
 			SendLine(`abcd.123 DELETE "INBOX"`)
 			ExpectResponse("abcd.123 OK DELETE Completed")
 		})
 
-		It("invalid name give an error", func() {
+		It("delete folder with invalid name give an error", func() {
 			SendLine(`abcd.123 DELETE "invalid"`)
 			ExpectResponse("abcd.123 NO DELETE Failure: can't delete mailbox with that name")
 		})
