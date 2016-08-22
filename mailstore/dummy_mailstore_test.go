@@ -98,3 +98,17 @@ func TestCreateMailbox(t *testing.T) {
 		t.Fatalf("mailboxes length should be 0 but is %d", len(user.Mailboxes()))
 	}
 }
+
+func TestDeleteMailbox(t *testing.T) {
+	user := getDefaultUser(t)
+	if len(user.Mailboxes()) != 2 {
+		t.Fatalf("mailboxes length should be 0 but is %d", len(user.Mailboxes()))
+	}
+	err := user.DeleteMailboxByName("INBOX")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(user.Mailboxes()) != 1 {
+		t.Fatalf("mailboxes length should be 0 but is %d", len(user.Mailboxes()))
+	}
+}
