@@ -63,11 +63,11 @@ func init() {
 	registerCommand("(?i:EXAMINE) \"?([A-z0-9]+)\"?", cmdExamine)
 	registerCommand("(?i:STATUS) \"?([A-z0-9/]+)\"? \\(([A-z\\s]+)\\)", cmdStatus)
 	registerCommand("((?i)UID )?(?i:FETCH) ("+sequenceSet+") \\(([A-z0-9\\s\\(\\)\\[\\]\\.-]+)\\)", cmdFetch)
-	registerCommand("(?i:CHECK)", cmdCheck)
 	registerCommand("(?i:CREATE) \"([A-z0-9]+)\"", cmdCreate)
 	registerCommand("(?i:RENAME) \"([A-z0-9]+)\" \"([A-z0-9]+)\"", cmdRename)
 	registerCommand("(?i:SUBSCRIBE) \"([A-z0-9]+)\"", cmdSubscribe)
 	registerCommand("(?i:UNSUBSCRIBE) \"([A-z0-9]+)\"", cmdUnsubscribe)
+	registerCommand("(?i:CHECK)", cmdCheck)
 
 	// APPEND "INBOX" (\Seen) {310}
 	// APPEND "INBOX" (\Seen) "21-Jun-2015 01:00:25 +0900" {310}
