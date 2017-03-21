@@ -3,7 +3,7 @@ package mailstore
 import (
 	"testing"
 
-	"github.com/jordwest/imap-server/types"
+	"github.com/adrianuswarmenhoven/imap-server/types"
 )
 
 func getDefaultUser(t *testing.T) *DummyUser {

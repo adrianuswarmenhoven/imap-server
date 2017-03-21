@@ -6,8 +6,8 @@ import (
 	"net/textproto"
 	"time"
 
-	"github.com/jordwest/imap-server/types"
-	"github.com/jordwest/imap-server/util"
+	"github.com/adrianuswarmenhoven/imap-server/types"
+	"github.com/adrianuswarmenhoven/imap-server/util"
 )
 
 // DummyMailstore is an in-memory mail storage for testing purposes and to

@@ -1,8 +1,8 @@
 package conn_test
 
 import (
-	"github.com/jordwest/imap-server/conn"
-	"github.com/jordwest/imap-server/types"
+	"github.com/adrianuswarmenhoven/imap-server/conn"
+	"github.com/adrianuswarmenhoven/imap-server/types"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )

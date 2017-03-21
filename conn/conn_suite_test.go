@@ -7,9 +7,9 @@ import (
 	"net/textproto"
 	"strings"
 
-	"github.com/jordwest/imap-server/conn"
-	"github.com/jordwest/imap-server/mailstore"
-	"github.com/jordwest/mock-conn"
+	"github.com/adrianuswarmenhoven/imap-server/conn"
+	"github.com/adrianuswarmenhoven/imap-server/mailstore"
+	"github.com/adrianuswarmenhoven/mock-conn"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 

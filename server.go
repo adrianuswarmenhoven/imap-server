@@ -7,8 +7,8 @@ import (
 	"net"
 	"net/textproto"
 
-	"github.com/jordwest/imap-server/conn"
-	"github.com/jordwest/imap-server/mailstore"
+	"github.com/adrianuswarmenhoven/imap-server/conn"
+	"github.com/adrianuswarmenhoven/imap-server/mailstore"
 )
 
 const (

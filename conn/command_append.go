@@ -3,7 +3,7 @@ package conn
 import (
 	"strconv"
 
-	"github.com/jordwest/imap-server/types"
+	"github.com/adrianuswarmenhoven/imap-server/types"
 )
 
 const (
