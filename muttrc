@@ -1,0 +1,6 @@
+# Automatically log in to this mailbox at startup
+set spoolfile="imap://username@127.0.0.1:10143/"
+# Define the = shortcut, and the entry point for the folder browser (c?)
+set folder="imap://127.0.0.1:10143/"
+set record="=Sent"
+set postponed="=Drafts"
